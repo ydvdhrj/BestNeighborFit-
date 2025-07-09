@@ -92,4 +92,5 @@ xhtml2pdf==0.2.17
 zopfli==0.2.3.post1
 
 flask-cors==5.0.0
+gunicorn
 
