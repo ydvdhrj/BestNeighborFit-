@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: neighborfit
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn main:app
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: FLASK_DEBUG
+        value: false
+      - key: SECRET_KEY
+        generateValue: true
+      - key: CENSUS_API_KEY
+        value: afce2dd724deac236676e317d61feae1d3696e29
+

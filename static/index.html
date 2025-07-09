@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeighborFit - Find Your Perfect Neighborhood</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h1>NeighborFit</h1>
+                </div>
+                <p class="tagline">Find neighborhoods that match your lifestyle</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Preferences Form -->
+            <section class="preferences-section">
+                <div class="section-header">
+                    <h2>Tell us about your ideal neighborhood</h2>
+                    <p>Adjust the sliders to match your preferences</p>
+                </div>
+
+                <form id="preferences-form" class="preferences-form">
+                    <div class="form-group">
+                        <label for="population-density">
+                            <i class="fas fa-users"></i>
+                            Population Density
+                        </label>
+                        <div class="slider-container">
+                            <input type="range" id="population-density" name="population_density" 
+                                   min="0" max="10000" value="2000" step="100">
+                            <div class="slider-value">
+                                <span id="population-density-value">2000</span> people/km²
+                            </div>
+                        </div>
+                        <div class="slider-labels">
+                            <span>Rural</span>
+                            <span>Urban</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="parks-density">
+                            <i class="fas fa-tree"></i>
+                            Parks & Green Spaces
+                        </label>
+                        <div class="slider-container">
+                            <input type="range" id="parks-density" name="parks_per_sqkm" 
+                                   min="0" max="20" value="5" step="0.5">
+                            <div class="slider-value">
+                                <span id="parks-density-value">5</span> parks/km²
+                            </div>
+                        </div>
+                        <div class="slider-labels">
+                            <span>Few</span>
+                            <span>Many</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="restaurants-density">
+                            <i class="fas fa-utensils"></i>
+                            Restaurants & Dining
+                        </label>
+                        <div class="slider-container">
+                            <input type="range" id="restaurants-density" name="restaurants_per_sqkm" 
+                                   min="0" max="50" value="10" step="1">
+                            <div class="slider-value">
+                                <span id="restaurants-density-value">10</span> restaurants/km²
+                            </div>
+                        </div>
+                        <div class="slider-labels">
+                            <span>Few</span>
+                            <span>Many</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="num-recommendations">
+                            <i class="fas fa-list"></i>
+                            Number of Recommendations
+                        </label>
+                        <select id="num-recommendations" name="k">
+                            <option value="3">3 neighborhoods</option>
+                            <option value="5" selected>5 neighborhoods</option>
+                            <option value="10">10 neighborhoods</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-search"></i>
+                        Find My Perfect Neighborhoods
+                    </button>
+                </form>
+            </section>
+
+            <!-- Loading State -->
+            <section id="loading-section" class="loading-section hidden">
+                <div class="loading-spinner">
+                    <i class="fas fa-spinner fa-spin"></i>
+                </div>
+                <p>Finding your perfect neighborhoods...</p>
+            </section>
+
+            <!-- Results Section -->
+            <section id="results-section" class="results-section hidden">
+                <div class="section-header">
+                    <h2>Your Neighborhood Matches</h2>
+                    <p>Based on your preferences, here are the best matches:</p>
+                </div>
+                <div id="results-container" class="results-container">
+                    <!-- Results will be populated here -->
+                </div>
+            </section>
+
+            <!-- Error Section -->
+            <section id="error-section" class="error-section hidden">
+                <div class="error-content">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>Oops! Something went wrong</h3>
+                    <p id="error-message">Please try again later.</p>
+                    <button onclick="hideError()" class="retry-btn">Try Again</button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 NeighborFit. Built with data from U.S. Census Bureau and OpenStreetMap.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

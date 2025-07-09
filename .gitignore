@@ -1,0 +1,41 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+
+# Generated data files
+scaler.joblib
+la_parks.json
+
+# Project data and archives
+neighborfit_render_ready.tar.gz
+california_census_tracts_features.csv
+scaler.joblib
+*.tar.gz
+*.csv
+*.joblib
+
+# Analysis outputs
+*.png
+
+# Development and testing files
+test_algorithm_validation.py
+
+# IDE-specific files (if any, e.g., .vscode/, .idea/)
+.vscode/
+.idea/
+
+# Environment variables file (if you add one later)
+.env
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Python specific
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
