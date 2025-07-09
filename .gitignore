@@ -10,8 +10,6 @@ la_parks.json
 
 # Project data and archives
 neighborfit_render_ready.tar.gz
-california_census_tracts_features.csv
-scaler.joblib
 *.tar.gz
 *.csv
 *.joblib
